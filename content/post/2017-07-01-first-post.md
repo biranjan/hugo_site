@@ -5,7 +5,6 @@ date: '2017-07-01'
 slug: first-post
 categories: ["R"]
 tags: ["R-studio", "Hugo", "blogdown"]
-draft: yes
 ---
 
 # Intro

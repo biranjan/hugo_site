@@ -7,8 +7,11 @@ categories: ["R"]
 tags: ["R-studio", "Hugo", "blogdown"]
 ---
 
-# Intro
+
 When I wanted to start a blog in git-hub first I thought Jekyll was the only option. Although Jekyll is natively supported by git-hub however it is not the only static site that git-hub can handle.
+
+<!--more-->
+
 Fortuitously I stumbled into this [article] (https://apreshill.rbind.io/post/up-and-running-with-blogdown/) from www.rweekly.org. Since I do quite a lot of my work in R-studio it looked quite promising to me and I decided to use Hugo.The article explains all the concepts and also refer to great many other sources to get you started with Hugo and R-studio but the article mainly focuses on hosting the site in Netlify. Netlify offers some features not available at github and it is easier to host Hugo on Netlify but I decided just to go with the Git-hub hosting. If you choose to host in netflify I guess you can just follow the article listed above.
 I tried to follow along some articles but it didn't work for me so I decided to write my own once I managed to get the Hugo up and running in Git-hub.
 

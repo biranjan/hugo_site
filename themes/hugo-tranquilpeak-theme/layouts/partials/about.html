@@ -24,5 +24,14 @@
         {{ . }}
       </div>
     {{ end }}
+
+   {{ with .Site.Author.me }}
+      <div id="about-card-location">
+        <i class="fa fa-bullhorn"></i>
+        <br/>
+        {{ . }}
+      </div>
+    {{ end }}   
+
   </div>
 </div>

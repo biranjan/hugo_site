@@ -192,3 +192,6 @@ canonifyurls = true
   # Customize copyright value "© 2016 <MIT>. All Rights Reserved"
   # [params.footer]
   #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
+
+  # Change suggested by r-studio
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]

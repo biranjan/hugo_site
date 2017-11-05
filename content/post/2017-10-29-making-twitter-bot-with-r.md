@@ -10,13 +10,13 @@ thumbnailImage: http://res.cloudinary.com/dstcxl6nt/image/upload/v1509295892/bot
 draft: yes
 ---
 
-I was just playing with Twitter API so that I could automatically like Tweets from certain twitter account like for example work. And then I realized 
-you can do quite more than just like the tweet. You can re-tweet the tweet, follow people, send messages and lot more.
+I was just playing with Twitter API so that I could automatically like Tweets from certain twitter account (for example twitter account of my workplace). And then I realized 
+you can do quite more than just like the tweet. You can re-tweet the tweet, follow people, send messages and lot more. In this post I am going to show the basics of how to set-up the twitter automation and you can add your own tricks on top of my basic scripts.
 <!--more-->
 
 Before we fire R-studio or R console first you need to set up the twitter app and get the API credential.The R package that we also be using is Rtweet and the package page in git-hub has a detail instruction on how to set up your twitter API [here](http://rtweet.info/articles/auth.html).
 
-Once everything is done let's load the required package
+Once everything is done let's load the required packages.
 
 ```
 library(rtweet)
@@ -24,7 +24,7 @@ library(httr)
 
 ```
 *Rtweet* is a wonderful package to do data mining task using data from twitter API, it also has ability to use 
-twitter live streaming API which allows to get the real-time tweets. And I am using *httr* in addition to rtweet as I couldn't find some certain post request so I am going to post tweet using *httr* post function.
+twitter live streaming API which allows access to real-time tweets. And I am using *httr* in addition to rtweet as I couldn't find some certain post request so I am going to post tweet using *httr* post function.
 
 Let's authenticate the app so that we can pull tweets from twitter. Once you run the code below it should redirect you to browser so that you can authenticate the app to use your twitter account.
 
@@ -72,7 +72,7 @@ Once authentication is successful now we can automate the re-tweet.
 ```
 POST(paste0("https://api.twitter.com/1.1/statuses/retweet/",rt2$status_id[1]),config(token = twitter_token))
 ```
-This should re-tweet the the first tweet from the data-frame rt2. If you want to re-tweet all then we can just write a loop.
+This should re-tweet the first tweet from the data-frame rt2. If you want to re-tweet all tweet, then we can just write a loop.
 
 ```
 # Here I am going to retweet the original tweet not the retweet and I will also pause for a whilte before I retweet next tweet so that I wouldn't fire all the retweet in a fraction of seconds(so that my tweet doesn't look suspicious)
@@ -89,7 +89,7 @@ for(n in 1:nrow(rt2)){
   Sys.sleep(sleep_time)
 }
 ```
-As I said earlier you can do more than re-tweet this time using the *rtweet* package you can follow or favorite the tweet to without leaving your R console. See all the trick on the git-hub page pf [rtweet](http://rtweet.info/index.html)
+As I said earlier you can do more than re-tweet. Now using the *rtweet* package you can follow or favorite the tweet without leaving your R console. See all the trick on the git-hub page pf [rtweet](http://rtweet.info/index.html)
 
 ```
 # If you want to follow the user
@@ -100,4 +100,4 @@ post_favorite(rt2$status_id[1])
 plain_tweets("txt")
 ```
 
-Okay there we go, the above script will give you a basic skeleton to automate your re-tweet or tweet. You can schedule the script to run certain time using cron job or create a loop that keeps finding a new tweet and keeps re-tweeting it. You can automate however you want to, I hope you'd find my script helpful.
+Okay there we go, the above script will give you a basic skeleton to automate your re-tweet or tweet. You can schedule the script to run during certain time using cron job or create a loop that keeps finding a new tweet and keeps re-tweeting it. You can automate however you want to, I hope you'd find my script helpful.

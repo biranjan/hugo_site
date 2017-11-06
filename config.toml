@@ -15,7 +15,7 @@
 baseurl = "https://biranjan.github.io"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "Biranjan"
+title = "Mostly about R"
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "https-biranjan-github-io-1"
 # googleAnalytics = "UA-123-45"
@@ -42,7 +42,7 @@ canonifyurls = true
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
   picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
   # Your Twitter username without the @. E.g : thibaudlepretre
-  # twitter = "thibaudlepretre"
+  twitter = "bbrnjan"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
   # googlePlus = "+ThibaudLepretre"
 
